@@ -1,14 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './views/App';
-import reportWebVitals from './reportWebVitals';
-import './styles/global.scss';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./views/App";
+import reportWebVitals from "./reportWebVitals";
+import "./styles/global.scss";
 
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+import rootReducer from "./stores/reducers/rootReducer.js";
+// import { BrowserRouter} from "react-router-dom";
+
+
+const reduxStore = createStore(rootReducer); // rootReducer is worker
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store = {reduxStore}>
+      {/* <BrowserRouter> */}
+      <App />
+      {/* </BrowserRouter> */}
+    </Provider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

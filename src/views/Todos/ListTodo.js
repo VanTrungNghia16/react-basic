@@ -69,6 +69,7 @@ class ListTodo extends React.Component {
 
     return (
       <>
+        <p>Simple TODO Apps with react.js.</p>
         <div className="list-todo-container">
           <AddTodo addNewTodo={this.addNewTodo} />
           <div className="list-todo-content">
